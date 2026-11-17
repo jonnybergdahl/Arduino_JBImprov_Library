@@ -48,6 +48,7 @@ public:
 
   /**
    * @brief Start connecting to a network. Must return without waiting.
+   * @param ssid Network name.
    * @param password Empty string for an open network.
    * @param hostname Hostname to use, may be empty.
    * @return false if the attempt couldn't be started.
@@ -105,6 +106,7 @@ public:
 };
 
 #if defined(ESP32) || defined(ESP8266)
+/// Defined when JBImprovDefaultWiFi is available (ESP32 and ESP8266).
 #define JBIMPROV_HAS_DEFAULT_WIFI 1
 
 /**

@@ -20,6 +20,6 @@
   "platforms": ["espressif32", "espressif8266"],
   "headers": ["JBImprov.h", "JBImprovSerial.h", "JBImprovBLE.h"],
   "export": {
-    "exclude": [".idea", ".pio", "test", "scripts"]
+    "exclude": [".idea", ".pio", "test", "scripts", "docs", "doxygen-awesome-css", "Doxyfile", "build.sh"]
   }
 }

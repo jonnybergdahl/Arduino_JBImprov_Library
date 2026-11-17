@@ -15,6 +15,7 @@
 #include "JBImprov.h"
 
 #if defined(ESP32) && (defined(CONFIG_BLUEDROID_ENABLED) || defined(CONFIG_NIMBLE_ENABLED))
+/// Defined when JBImprovBLE is available (ESP32 with Bluetooth).
 #define JBIMPROV_HAS_BLE 1
 
 #include <BLEDevice.h>
@@ -25,11 +26,17 @@
 #endif
 #include <string.h>
 
+/// Improv GATT service.
 #define JBIMPROV_BLE_SERVICE_UUID "00467768-6228-2272-4663-277478268000"
+/// Current state characteristic (read, notify).
 #define JBIMPROV_BLE_STATE_UUID "00467768-6228-2272-4663-277478268001"
+/// Error state characteristic (read, notify).
 #define JBIMPROV_BLE_ERROR_UUID "00467768-6228-2272-4663-277478268002"
+/// RPC command characteristic (write).
 #define JBIMPROV_BLE_RPC_COMMAND_UUID "00467768-6228-2272-4663-277478268003"
+/// RPC result characteristic (read, notify).
 #define JBIMPROV_BLE_RPC_RESULT_UUID "00467768-6228-2272-4663-277478268004"
+/// Capabilities characteristic (read).
 #define JBIMPROV_BLE_CAPABILITIES_UUID "00467768-6228-2272-4663-277478268005"
 
 /// 16-bit UUID of the Improv service data in the advertisement.

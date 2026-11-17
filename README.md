@@ -35,7 +35,11 @@ You can use one or both. They share a single Wi-Fi state, so a device provisione
 
 ### Arduino IDE
 
-Download the repository as a ZIP file, then select **Sketch** > **Include Library** > **Add .ZIP Library...** and pick the file.
+JBImprov is available in the Arduino Library Manager:
+
+1. Select **Sketch** > **Include Library** > **Manage Libraries...** (or the **Library Manager** in the sidebar).
+2. Search for **JBImprov**.
+3. Select **Install**.
 
 ### PlatformIO
 
@@ -153,9 +157,11 @@ void setup() {
 }
 ```
 
-See [examples/SerialAndBLE](examples/SerialAndBLE/SerialAndBLE.ino). It also serves a web page as the redirect URL and stores the hostname and device name in `Preferences`.
+See [examples/SerialAndBLE](https://github.com/jonnybergdahl/Arduino_JBImprov_Library/blob/main/examples/SerialAndBLE/SerialAndBLE.ino). It also serves a web page as the redirect URL and stores the hostname and device name in `Preferences`.
 
 ## Configuration
+
+Full code documentation is available at https://jonnybergdahl.github.io/jbimprov/.
 
 Call these before `begin()`.
 
@@ -197,7 +203,7 @@ On ESP32 and ESP8266 the callbacks can be lambdas that capture variables (`std::
 
 ## Other boards
 
-On boards other than the ESP32 and ESP8266, derive a class from `JBImprovWiFi` and pass it to the constructor. It has methods to connect, report the connection status, scan, and get the IP address. See [src/JBImprovWiFi.h](src/JBImprovWiFi.h).
+On boards other than the ESP32 and ESP8266, derive a class from `JBImprovWiFi` and pass it to the constructor. It has methods to connect, report the connection status, scan, and get the IP address. See [src/JBImprovWiFi.h](https://github.com/jonnybergdahl/Arduino_JBImprov_Library/blob/main/src/JBImprovWiFi.h).
 
 ```c++
 class MyWiFi : public JBImprovWiFi {
@@ -224,8 +230,11 @@ improv-client ble <address> provision MyNetwork
 ```bash
 pio test -e native            # Unit tests on the host
 scripts/build_examples.sh     # Compile all examples for ESP32 (core 2.x and 3.x), ESP32-S2, ESP32-S3 and ESP8266
+./build.sh                    # Build the Doxygen docs and publish them to jonnybergdahl.github.io/jbimprov
 ```
+
+The docs use the [doxygen-awesome-css](https://github.com/jothepro/doxygen-awesome-css) theme as a Git submodule. After cloning, run `git submodule update --init`.
 
 ## License
 
-MIT, see [LICENSE](LICENSE).
+MIT, see [LICENSE](https://github.com/jonnybergdahl/Arduino_JBImprov_Library/blob/main/LICENSE).

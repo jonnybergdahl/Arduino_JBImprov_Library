@@ -19,6 +19,7 @@
  */
 class JBImprovSerial : public JBImprovTransport {
 public:
+  /// Use @p stream, which must outlive this object.
   explicit JBImprovSerial(Stream& stream) : _stream(stream) {}
 
   /**

@@ -33,3 +33,6 @@
 
 # PlatformIO
 .pio/
+
+# Doxygen output
+docs/

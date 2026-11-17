@@ -134,7 +134,9 @@ public:
   /// Bytes left for more strings, including their length prefixes.
   size_t remaining() const { return JBIMPROV_MAX_RESULT_LENGTH - _length; }
 
+  /// The encoded strings.
   const uint8_t* data() const { return _data; }
+  /// Number of bytes in data().
   uint8_t length() const { return (uint8_t)_length; }
 
 private:
@@ -147,6 +149,7 @@ private:
  */
 class JBImprovStringReader {
 public:
+  /// Read from @p length bytes at @p data. The data is not copied.
   JBImprovStringReader(const uint8_t* data, size_t length)
       : _data(data), _length(length), _position(0) {}
 
@@ -174,6 +177,9 @@ private:
 
 /**
  * @brief Encode a serial frame: "IMPROV", version, type, length, data, checksum.
+ * @param type Packet type.
+ * @param data Packet data.
+ * @param length Number of bytes in @p data.
  * @param out Buffer of at least @p length + 10 bytes.
  * @return Number of bytes written.
  */
@@ -182,6 +188,10 @@ size_t jbImprovEncodeSerialFrame(JBImprovPacketType type, const uint8_t* data, u
 
 /**
  * @brief Encode an RPC result: command, data length, data, optionally a checksum (BLE).
+ * @param command The command this is a result for.
+ * @param data Length prefixed strings, e.g. from JBImprovResultBuilder.
+ * @param length Number of bytes in @p data.
+ * @param addChecksum true to append the checksum, as BLE needs.
  * @param out Buffer of at least @p length + 3 bytes.
  * @return Number of bytes written.
  */
@@ -211,8 +221,11 @@ public:
   /// true while a frame has been started but not finished.
   bool inFrame() const { return _position > 0; }
 
+  /// Packet type of the last complete frame.
   JBImprovPacketType type() const { return (JBImprovPacketType)_type; }
+  /// Data of the last complete frame.
   const uint8_t* data() const { return _data; }
+  /// Number of bytes in data().
   uint8_t length() const { return _length; }
 
 private:

@@ -121,7 +121,9 @@ protected:
   /// Report an error state if it differs from the last one sent.
   void setError(JBImprovError error);
 
+  /// The JBImprov instance this transport was added to.
   JBImprov* _improv = nullptr;
+  /// The last error state sent, used by setError().
   JBImprovError _lastError = JBImprovError::None;
 };
 
@@ -214,9 +216,13 @@ public:
   /// true when connected to Wi-Fi.
   bool isProvisioned() const { return _state == JBImprovState::Provisioned; }
 
+  /// The device name, including one set by a client.
   const char* deviceName() const { return _deviceName; }
+  /// The hostname, including one set by a client.
   const char* hostname() const { return _hostname; }
+  /// The firmware name set with setFirmware().
   const char* firmwareName() const { return _firmwareName; }
+  /// The firmware version set with setFirmware().
   const char* firmwareVersion() const { return _firmwareVersion; }
 
   /// Capability flags for BLE.
