@@ -1,0 +1,25 @@
+{
+  "name": "JBImprov",
+  "version": "1.0.0",
+  "description": "Improv Wi-Fi provisioning over serial and Bluetooth LE, like ESPHome. Improv Serial on ESP32 and ESP8266, Improv BLE on ESP32.",
+  "keywords": "improv, wifi, provisioning, ble, bluetooth, serial, esp32, esp8266, esp-web-tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonnybergdahl/Arduino_JBImprov_Library.git"
+  },
+  "authors": [
+    {
+      "name": "Jonny Bergdahl",
+      "email": "github@bergdahl.org",
+      "maintainer": true
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/jonnybergdahl/Arduino_JBImprov_Library",
+  "frameworks": "arduino",
+  "platforms": ["espressif32", "espressif8266"],
+  "headers": ["JBImprov.h", "JBImprovSerial.h", "JBImprovBLE.h"],
+  "export": {
+    "exclude": [".idea", ".pio", "test", "scripts"]
+  }
+}

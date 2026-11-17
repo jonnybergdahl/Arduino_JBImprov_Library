@@ -1,0 +1,41 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+JBImprov	KEYWORD1
+JBImprovSerial	KEYWORD1
+JBImprovBLE	KEYWORD1
+JBImprovWiFi	KEYWORD1
+JBImprovDefaultWiFi	KEYWORD1
+JBImprovTransport	KEYWORD1
+JBImprovState	KEYWORD1
+JBImprovError	KEYWORD1
+JBImprovNetwork	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setFirmware	KEYWORD2
+setHardware	KEYWORD2
+setDeviceName	KEYWORD2
+setHostname	KEYWORD2
+setRedirectUrl	KEYWORD2
+setConnectTimeout	KEYWORD2
+addTransport	KEYWORD2
+onProvisioned	KEYWORD2
+onStateChanged	KEYWORD2
+onIdentify	KEYWORD2
+onHostnameChanged	KEYWORD2
+onDeviceNameChanged	KEYWORD2
+isProvisioned	KEYWORD2
+deviceName	KEYWORD2
+hostname	KEYWORD2
+redirectUrl	KEYWORD2
+setAutoRead	KEYWORD2
+handleByte	KEYWORD2
+setAuthorizationRequired	KEYWORD2
+setAuthorizationTimeout	KEYWORD2
+authorize	KEYWORD2
+setAdvertiseWhenProvisioned	KEYWORD2
+isClientConnected	KEYWORD2
